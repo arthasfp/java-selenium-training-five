@@ -1,18 +1,18 @@
+package task1;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class SimpleGoogleTest {
-
+public class ChromeTest {
     private WebDriver driver;
 
     @BeforeClass
-    public static void setupClass() {
+    public static void setupManager() {
         WebDriverManager.chromedriver().setup();
     }
 
@@ -29,9 +29,7 @@ public class SimpleGoogleTest {
     }
 
     @Test
-    public void googleTEst(){
-        driver.get("https://google.com");
-        driver.findElement(By.name("q")).sendKeys("Selenium");
-//        driver.findElement(By.name("btnK")).click();
+    public void chromeTest(){
+        driver.get("https://www.seleniumhq.org");
     }
 }
