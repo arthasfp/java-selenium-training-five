@@ -4,6 +4,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.HasCapabilities;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -31,7 +33,8 @@ public class SimpleGoogleTest {
     @Test
     public void googleTEst(){
         driver.get("https://google.com");
-        driver.findElement(By.name("q")).sendKeys("Selenium");
+        driver.findElement(By.name("q")).sendKeys("Selenium" + Keys.ENTER);
 //        driver.findElement(By.name("btnK")).click();
+        System.out.println(((HasCapabilities)driver).getCapabilities());
     }
 }

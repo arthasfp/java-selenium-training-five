@@ -7,6 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class InternetExplorerTest {
     private WebDriver ieDriver;
@@ -18,7 +19,10 @@ public class InternetExplorerTest {
 
     @Before
     public void setupTest() {
-        ieDriver = new InternetExplorerDriver();
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING, true);
+        caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+        ieDriver = new InternetExplorerDriver(caps);
     }
 
     @After
@@ -29,7 +33,7 @@ public class InternetExplorerTest {
     }
 
     @Test
-    public void internetExplorerTest(){
+    public void internetExplorerTest() {
         ieDriver.get("https://www.seleniumhq.org/");
     }
 }

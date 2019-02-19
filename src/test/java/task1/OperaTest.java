@@ -9,11 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
 
-import java.io.File;
-
-import static org.apache.commons.lang3.SystemUtils.IS_OS_MAC;
-import static org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS;
-import static org.junit.Assume.assumeTrue;
 
 public class OperaTest {
     private WebDriver driver;
